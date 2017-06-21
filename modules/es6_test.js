@@ -1,12 +1,21 @@
 function publish(message){
-  	homeFrm.outputTxt.text += '\n' + message;
+  	var out = homeFrm.outputTxt;
+  	out.text = out.text?out.text:'';
+  	out.text += '\n' + message;
 }
 
-function assert(condition, message){
-  	if(condition) return;
-  	kony.print(message);
-	publish(message);
-  	throw new Error(message);
+function assert(test, condition, message){
+  	if(condition){
+      	var okmsg = test + ' ok';
+      	kony.print('Es6***' + okmsg);
+    	publish(okmsg);
+    }
+  	else{
+        kony.print('Es6***' + message);
+        publish('Fail: ' + message);
+        throw new Error(message);      
+    }
+
 }
     
 function runTests(){
@@ -16,16 +25,14 @@ function runTests(){
     if (true) {
         let x = 2;  // different variable
         kony.print(x);  // 2
-        assert(x === 2, 'let local is affected by global');
+        assert('let local not affected by global', x === 2, 'let local is affected by global');
     }
     kony.print(x);  // 1
-    assert(x === 1, 'let global is affected by local');
-  	publish('let works ok');
+    assert('let global not affected by local', x === 1, 'let global is affected by local');
 	
 
     //Testing existence of Promise
-    assert(typeof Promise === 'function', 'Promise is not defined');
-  	publish('Promise is a function ok');
+    assert('Promise exists', typeof Promise === 'function', 'Promise is not defined');
 
     //Testing declaration of constants.
     const PI = 3.141593;
@@ -36,17 +43,14 @@ function runTests(){
   	catch(e){ //TypeError
     	threwError = true;
     }
-  	assert(threwError, 'Assigning to constants does not throw error' )
-    publish('Assigning to constants throws error ok');
+  	assert('Assign to const throws error', threwError, 'Assigning to constants does not throw error' )
 
-    assert(PI === 3.141593, 'Value of a constant can be changed');
-  	publish('A constant value is immutable ok');
+    assert('Const is immutable', PI === 3.141593, 'Value of a constant can be changed');
   
   	//Testing fat arrow functions
   	var evens = [2, 4, 6];
   	var odds = evens.map(v => v + 1);
-  	assert(odds.join('') === '357', 'Fat arrows do not work');
-  	publish('Fat arrows (=>) work ok');
+  	assert('Fat arrows work', odds.join('') === '357', 'Fat arrows do not work');
 }
 
 function runTemplateLiteralTests(){
@@ -54,13 +58,12 @@ function runTemplateLiteralTests(){
   	//Test interpolation
   	var name = 'Miguel';
   	var interpolation = `Hello ${name}, good morning`;
-  	assert(interpolation === 'Hello Miguel, good morning','String interpolation does not work');
-	publish('Interpolation works ok');
+  	assert('String interpolation', interpolation === 'Hello Miguel, good morning','String interpolation does not work');
   
 	//Test multiline string
   	var multiline = `This is a string that
 spans multiple lines`;
-  	assert(multiline === "This is a string that\nspans multiple lines", 'Multi-line strings do not work');
-	publish('Multiline strings work ok');
+  	assert('Multi-line string', multiline === "This is a string that\nspans multiple lines", 'Multi-line strings do not work');
+	
 }
 
