@@ -1,3 +1,4 @@
+/* jshint esnext: true */
 function publish(message){
   	var out = homeFrm.outputTxt;
   	out.text = out.text?out.text:'';
@@ -43,7 +44,7 @@ function runTests(){
   	catch(e){ //TypeError
     	threwError = true;
     }
-  	assert('Assign to const throws error', threwError, 'Assigning to constants does not throw error' )
+  	assert('Assign to const throws error', threwError, 'Assigning to constants does not throw error' );
 
     assert('Const is immutable', PI === 3.141593, 'Value of a constant can be changed');
   
@@ -51,6 +52,7 @@ function runTests(){
   	var evens = [2, 4, 6];
   	var odds = evens.map(v => v + 1);
   	assert('Fat arrows work', odds.join('') === '357', 'Fat arrows do not work');
+  	runClassesTest();
 }
 
 function runTemplateLiteralTests(){
@@ -67,3 +69,28 @@ spans multiple lines`;
 	
 }
 
+class TestClass {
+  constructor(str) {
+    this.str = str;
+  }
+  
+  get str() {
+    return "string=>" + this._str;
+  }
+  
+  set str(str) {
+    kony.print("inside setter for st.");
+    this._str=str;
+  }
+  static get myStaticStr() {
+    return "TestClass is the Class";
+  }
+}
+
+function runClassesTest() {
+  var myStaticStr = TestClass.myStaticStr;
+  assert('Classes with static getter', myStaticStr === "TestClass is the Class", "Static getters in classes works");
+  var myClass = new TestClass("test string");
+  var str = myClass.str;
+  assert('Classes with getter', str === "string=>test string", "Classes with getter do not work.");
+}
