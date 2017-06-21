@@ -1,0 +1,43 @@
+<properties>
+    <attributes name="appidkey" value="Es6App"/>
+    <attributes name="mwaddrkey" value="192.168.1.102"/>
+    <attributes name="iospopuptransitioncorrection" value="true"/>
+    <attributes name="isNewAppWithRespectToAndroidPackageName" value="true"/>
+    <attributes name="iphonebundleversionkey" value="1.0"/>
+    <attributes name="iosrespectimagesizecorrection" value="true"/>
+    <attributes name="ioscheckboxcorrection" value="true"/>
+    <attributes name="apppackagekey" value="com.orgname.Es6App"/>
+    <attributes name="winmangotiletitlekey" value="Es6App"/>
+    <attributes name="andtargetsdkkey" value="4.0"/>
+    <attributes name="win8displaynamekey" value="Es6App"/>
+    <attributes name="android_allowselfsignedcertificates" value="None"/>
+    <attributes name="iphonebundleidentifierkey" value="com.kony.Es6App"/>
+    <attributes name="appnamekey" value="Es6App"/>
+    <attributes name="currentgaversion" value="7.3.0.GA_v201704051416"/>
+    <attributes name="appversionkey" value="1.0.0"/>
+    <attributes name="project.type" value="js"/>
+    <attributes name="sessionmanager" value="Http Session Manager"/>
+    <attributes name="vendornamekey" value="KonyLabs"/>
+    <attributes name="appversioncode" value="1"/>
+    <attributes name="createdgaversion" value="7.3.0"/>
+    <attributes name="isDpScaleFactor" value="true"/>
+    <attributes name="iostextboxpaddingcorrection" value="true"/>
+    <attributes name="win6xj2meonlysupported" value="false"/>
+    <attributes name="wp10displayname" value="Es6App"/>
+    <attributes name="referenceWidth" value="375"/>
+    <attributes name="build" value="debug"/>
+    <attributes name="studiovizproject" value="true"/>
+    <attributes name="marginsincludedinwidgetcontainerweight" value="true"/>
+    <attributes name="mwportkey" value="80"/>
+    <attributes name="mwhttpsportkey" value="443"/>
+    <attributes name="APPLICATION_THEME" value="default"/>
+    <attributes name="SELECTED_THEME" value="default"/>
+    <attributes name="lastmodifiedtime" value="0"/>
+    <attributes name="Server side mobile web" value="false"/>
+    <attributes name="androidenablejsbindings" value="false"/>
+    <attributes name="cloud_url" value="https://engie-dev.konycloud.com"/>
+    <attributes name="cloud_env_name" value="ENGIE-Engie DEV"/>
+    <attributes name="cloud_env_GUID" value="e5550618-e38f-4ec6-8f7e-422967e07117"/>
+    <attributes name="cloud_account_id" value="100004737"/>
+    <attributes name="cloud_account_guid" value="9fd52ffe-5103-4bd4-9032-78d6a5fd116a"/>
+</properties>

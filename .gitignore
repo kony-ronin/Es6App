@@ -1,0 +1,14 @@
+# Visualizer auto-gen javascript dir. Note the leading slash to differentiate it from /resources/[customlibs|customwidgets]/jsSrc
+# subdirs which do include important files for FFI's and Custom Widgets, and can't be ignored.
+/jssrc/*
+
+# The default location where apk and kar files are placed when doing a headless build.
+/binaries
+*.apk
+*.KAR
+
+# Kony Visualizer property files
+#middleware.properties
+
+# Starting with Vis 7.3 the sdkplugin.properties file has been moved to /resources/customlibs.
+/resources/customlibs/sdkplugin.properties
